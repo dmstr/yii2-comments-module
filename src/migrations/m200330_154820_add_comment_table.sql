@@ -8,10 +8,10 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`),
   INDEX `idx_key` (`key` ASC),
-  INDEX `fk_stg_comment_stg_comment1_idx` (`parent_comment_id` ASC),
-  CONSTRAINT `fk_stg_comment_stg_comment1`
+  INDEX `fk_comment_stg_comment1_idx` (`parent_comment_id` ASC),
+  CONSTRAINT `fk_comment_stg_comment1`
     FOREIGN KEY (`parent_comment_id`)
-    REFERENCES `stg_comment` (`id`)
+    REFERENCES `comment` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
